@@ -1,26 +1,13 @@
 {
   "name": "javascript-refresher",
   "version": "1.0.0",
-  "source": "public/index.html",
   "license": "MIT",
   "private": true,
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
-    "start:dev": "yarn run clear-files:dev && parcel --dist-dir dist-dev --port 3000",
-    "start:build": "yarn run clear-files:build && parcel build",
-    "clear-files:dev": "rimraf -rf dist-dev/",
-    "clear-files:build": "rimraf -rf dist/",
-    "clear-files:cache": "rimraf -rf .parcel-cache/",
-    "clear-files:all": "yarn run clear-files:dev && yarn run clear-files:build && yarn run clear-files:cache"
   },
   "devDependencies": {
-    "cross-env": "^7.0.3",
-    "parcel": "^2.3.2",
-    "rimraf": "^3.0.2",
-    "sass": "^1.49.8"
   },
   "dependencies": {
-    "@swc/helpers": "^0.3.6",
-    "regenerator-runtime": "^0.13.9"
   }
 }
