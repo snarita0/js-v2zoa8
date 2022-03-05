@@ -1,0 +1,14 @@
+Links:
+  https://parceljs.org/languages/javascript/
+  https://vscode.dev
+  
+
+Focus on Folder in Explorer:
+  Ctrl + V, Ctrl + F
+
+Focus on Editor:
+  Ctrl + 1
+
+
+CSS:
+ Frosted Glass https://codepen.io/GreggOD/pen/xLbboZ

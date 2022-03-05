@@ -1,0 +1,5 @@
+Setup mobile development environment:
+  vscode.dev
+
+look into "Expose" library:
+  Expose your localhost to the internet.
