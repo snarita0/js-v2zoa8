@@ -1,9 +1,13 @@
+// prettier-ignore
+let add = (x, y) => { return x + y; };
+
 export const Test = () => {
   const template = `
     <header>
-      <h1>My Parcel App</h1>
-      <p>This is a boilerplate for a simple vanilla JS workflow using the Parcel bundler.</p>
+      <h1>Refresher</h1>
+      <hr>
+      <p>${add(1,2)}</p>
     </header>
   `;
-	return template;
+  return template;
 };
