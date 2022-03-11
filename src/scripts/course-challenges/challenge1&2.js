@@ -19,7 +19,7 @@ Your tasks:
   2. Use a template literal to include the BMI values in the outputs. Example: "Mark's BMI (28.3) is higher than John's (23.9)!" 
 */
 
-export const challenge1 = () => {
+export const challenge1_2 = () => {
   const calculateBMI = (mass, height) => {
     return mass / height ** 2;
   };
