@@ -12,20 +12,22 @@ Hints:
 */
 
 export const challenge4 = () => {
-  // 15% = $50 - $300
-  // 20% = <$50 || >$300
-  let calculateTip = (price) => {
+  const calculateTip = (price) => {
     let tipPercentage = {
       _15Check: price >= 50 && price <= 300,
       _15: price * (15 / 100),
       _20: price * (20 / 100),
     };
+
     let tip = tipPercentage._15Check ? tipPercentage._15 : tipPercentage._20;
-    return tip;
+    return { tip: tip, _15PercentTipCheck: tipPercentage._15Check ? 15 : 20 };
   };
+
   let prices = [275, 40, 430];
+
   for (let price of prices) {
-    let tip = calculateTip(price);
-    console.log(`Price: $${price} + Tip: $${tip} = $${price + tip}`);
+    let { tip, _15PercentTipCheck } = calculateTip(price);
+    // prettier-ignore
+    console.log(`Price: $${price}\nTip:    $${tip} (${_15PercentTipCheck}%)\n\tTotal: $${price + tip}`);
   }
 };
