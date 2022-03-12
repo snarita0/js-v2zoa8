@@ -1,5 +1,6 @@
 import { challenge1_2 } from './src/scripts/course-challenges/challenge1&2.js';
 import { challenge3 } from './src/scripts/course-challenges/challenge3.js';
+import { challenge4 } from './src/scripts/course-challenges/challenge4.js';
 import { Test } from './src/scripts/Test';
 
 import './src/styles/app.css';
@@ -10,6 +11,7 @@ const app = async () => {
 
   // challenge1_2();
   // challenge3();
+  challenge4();
 };
 
 app();
