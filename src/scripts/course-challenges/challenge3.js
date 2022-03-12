@@ -102,6 +102,6 @@ export const challenge3 = () => {
     }
   };
 
-  console.log(`Minimum Score Check:\n  ${minimumScoreNotReached}`);
+  console.log(`Minimum Score Check:\n\t`, minimumScoreNotReached);
   printMatchResults();
 };
