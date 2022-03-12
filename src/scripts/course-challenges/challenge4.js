@@ -20,10 +20,12 @@ export const challenge4 = () => {
       _15: price * (15 / 100),
       _20: price * (20 / 100),
     };
-    let tip = tipPercentage._15Check ? _15 : _20;
+    let tip = tipPercentage._15Check ? tipPercentage._15 : tipPercentage._20;
     return tip;
   };
-
   let prices = [275, 40, 430];
-  console.log(calculateTip(prices[0]));
+  for (let price of prices) {
+    let tip = calculateTip(price);
+    console.log(`Price: $${price} + Tip: $${tip} = $${price + tip}`);
+  }
 };
