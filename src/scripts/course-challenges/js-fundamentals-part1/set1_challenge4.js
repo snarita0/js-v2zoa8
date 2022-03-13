@@ -11,7 +11,7 @@ Hints:
   § To calculate 20% of a value, simply multiply it by 20/100 = 0.2 § Value X is between 50 and 300, if it's >= 50 && <= 300 �
 */
 
-export const challenge4 = () => {
+export const set1_challenge4 = () => {
   const calculateTip = (price) => {
     let tipPercentage = {
       _15Check: price >= 50 && price <= 300,

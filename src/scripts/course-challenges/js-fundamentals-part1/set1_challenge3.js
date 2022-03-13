@@ -21,7 +21,7 @@ Tests:
   O : Draw (Neither team reached minimum score)
 */
 
-export const challenge3 = () => {
+export const set1_challenge3 = () => {
   // Data 1:
   // let teamDolphinsScores = [96, 108, 89];
   // let teamKoalasScores = [88, 91, 110];
