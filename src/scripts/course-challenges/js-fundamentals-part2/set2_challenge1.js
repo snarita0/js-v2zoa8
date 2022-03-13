@@ -11,7 +11,8 @@ Your tasks:
   5. Ignore draws this time
 
 Test data:
-  § Data 1: Dolphins score 44, 23 and 71. Koalas score 65, 54 and 49 § Data 2: Dolphins score 85, 54 and 41. Koalas score 23, 34 and 27
+  § Data 1: Dolphins score 44, 23 and 71. Koalas score 65, 54 and 49 
+  § Data 2: Dolphins score 85, 54 and 41. Koalas score 23, 34 and 27
 
 Hints:
   § To calculate average of 3 values, add them all together and divide by 3
@@ -19,7 +20,7 @@ Hints:
 */
 
 export const set2_challenge1 = () => {
-  let calcAverage = (scores) => {
+  const calcAverage = (scores) => {
     return (
       scores.reduce((averageScore, roundScore) => {
         return averageScore + roundScore;
@@ -27,66 +28,34 @@ export const set2_challenge1 = () => {
     ).toFixed(0);
   };
 
-  // Data 1:
-  let teamDolphinsScores = [96, 108, 89];
-  let teamKoalasScores = [88, 91, 110];
+  const checkWinner = (avgDolphins, avgKoalas) => {
+    let dolphinsWin = avgDolphins >= avgKoalas * 2;
+    let koalasWin = avgKoalas >= avgDolphins * 2;
+    let winner = null;
+
+    if (dolphinsWin) {
+      winner = `Dolphins Win! - (${avgDolphins} vs ${avgKoalas})`;
+    }
+    if (koalasWin) {
+      winner = `Koalas Win! - (${avgKoalas} vs ${avgDolphins})`;
+    }
+    if (!dolphinsWin && !koalasWin) {
+      winner = `No Winner - (${avgKoalas} vs ${avgDolphins})`;
+    }
+
+    console.log(winner);
+  };
+
+  // Data 1 (No Winner):
+  let teamDolphinsScores = [44, 23, 71];
+  let teamKoalasScores = [65, 54, 49];
+
+  // Data 2 (Dolphins Win):
+  // let teamDolphinsScores = [85, 54, 41];
+  // let teamKoalasScores = [23, 34, 27];
 
   let avgDolphins = calcAverage(teamDolphinsScores);
   let avgKoalas = calcAverage(teamKoalasScores);
-  let teamDolphinsWonMatch = avgDolphins > avgKoalas;
-  let matchDraw = avgDolphins === avgKoalas;
-  let minimumScore = 100;
-  let minimumScoreNotReached = {
-    teamDolphins: avgDolphins < minimumScore,
-    teamKoalas: avgKoalas < minimumScore,
-  };
 
-  let printMatchResults = () => {
-    let printScores_teamDolphinsWinOrDraw = `D: ${avgDolphins} - K: ${avgKoalas}`;
-    let printScores_teamKoalasWin = `K: ${avgKoalas} - D: ${avgDolphins}`;
-
-    /* prettier-ignore  
-        Number of if statements could be cut in half by using 
-        default match result messages (Draw, Koalas Win, Dolphins Win) 
-        instead of using a custom message for every statement.
-      */
-    // else if doesn't work. StackBlitz issue.
-    if (
-      minimumScoreNotReached.teamDolphins &&
-      minimumScoreNotReached.teamKoalas
-    ) {
-      return console.log(
-        `Both teams have insufficient points to win the match. Draw! ${printScores_teamDolphinsWinOrDraw}`
-      );
-    }
-
-    if (minimumScoreNotReached.teamKoalas) {
-      return console.log(
-        `Team Koalas lose by insufficient points. Team Dolphins Win! ${printScores_teamDolphinsWinOrDraw}`
-      );
-    }
-
-    if (minimumScoreNotReached.teamDolphins) {
-      return console.log(
-        `Team Dolphins lose by insufficient points. Team Koalas Win! ${printScores_teamKoalasWin}`
-      );
-    }
-
-    if (matchDraw) {
-      return console.log(`Draw! ${printScores_teamDolphinsWinOrDraw}`);
-    }
-
-    if (teamDolphinsWonMatch) {
-      return console.log(
-        `Team Dolphins Win! ${printScores_teamDolphinsWinOrDraw}`
-      );
-    }
-
-    if (!teamDolphinsWonMatch) {
-      return console.log(`Team Koalas Win! ${printScores_teamKoalasWin}`);
-    }
-  };
-
-  console.log(`Minimum Score Check:\n\t`, minimumScoreNotReached);
-  printMatchResults();
+  checkWinner(avgDolphins, avgKoalas);
 };

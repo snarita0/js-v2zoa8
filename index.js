@@ -8,9 +8,10 @@ const app = async () => {
   root.innerHTML += Test();
 
   // JS Fundamentals Part 1 (Set 1):
-  // challenges.challenge1_2();
-  // challenges.challenge3();
-  // challenges.challenge4();
+  // challenges.set1_challenge1_2();
+  // challenges.set1_challenge3();
+  // challenges.set1_challenge4();
+  challenges.set2_challenge1();
 };
 
 app();
