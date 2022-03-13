@@ -20,6 +20,10 @@ export const challenge4 = () => {
     };
 
     let tip = tipPercentage._15Check ? tipPercentage._15 : tipPercentage._20;
+
+    // 15% percent tip check is returned to
+    // display each price showing their
+    // corresponding tip percentage.
     return { tip: tip, _15PercentTipCheck: tipPercentage._15Check ? 15 : 20 };
   };
 
