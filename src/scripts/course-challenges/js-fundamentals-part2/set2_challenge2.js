@@ -38,7 +38,11 @@ export const set2_challenge2 = () => {
 
   bills.forEach((bill) => {
     let { tip, _15PercentTipCheck } = calcTip(bill);
+    tips.push(tip);
+    total.push(bill + tip);
+
     // prettier-ignore
     console.log(`Price: $${bill}\nTip:    $${tip} (${_15PercentTipCheck}%)\n\tTotal: $${bill + tip}`);
   });
+  console.log(`Tips: ${tips.join(', ')}\nTotals: ${total.join(', ')}`);
 };
