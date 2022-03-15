@@ -19,13 +19,14 @@ length of the array (because that's the number of elements)
 */
 
 export const set2_challenge4 = () => {
-  const getAverageScore = (scores) => {
+  const calcAverage = (arr) => {
     return (
-      scores.reduce((averageScore, roundScore) => {
-        return averageScore + roundScore;
-      }) / scores.length
+      arr.reduce((accumulatedTotals, total) => {
+        return accumulatedTotals + total;
+      }) / arr.length
     ).toFixed(0);
   };
+
   const calcTip = (price) => {
     let tipPercentage = {
       _15Check: price >= 50 && price <= 300,
@@ -52,5 +53,8 @@ export const set2_challenge4 = () => {
     // prettier-ignore
     console.log(`Price: $${bill}\nTip:    $${tip} (${_15PercentTipCheck}%)\n\tTotal: $${bill + tip}`);
   });
+
+  let totalsAverage = calcAverage(totals);
   console.log(bills, tips, totals);
+  console.log(`Total Average: ${totalsAverage}`);
 };
