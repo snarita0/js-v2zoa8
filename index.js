@@ -11,7 +11,8 @@ const app = async () => {
   // challenges.set1_challenge1_2();
   // challenges.set1_challenge3();
   // challenges.set1_challenge4();
-  challenges.set2_challenge1();
+  // challenges.set2_challenge1();
+  challenges.set2_challenge2();
 };
 
 app();
