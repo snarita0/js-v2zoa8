@@ -7,6 +7,7 @@ import { set1_challenge4 } from './js-fundamentals-part1/set1_challenge4.js';
 import { set2_challenge1 } from './js-fundamentals-part2/set2_challenge1.js';
 import { set2_challenge2 } from './js-fundamentals-part2/set2_challenge2.js';
 import { set2_challenge3 } from './js-fundamentals-part2/set2_challenge3.js';
+import { set2_challenge4 } from './js-fundamentals-part2/set2_challenge4.js';
 
 export {
   set1_challenge1_2,
@@ -15,4 +16,5 @@ export {
   set2_challenge1,
   set2_challenge2,
   set2_challenge3,
+  set2_challenge4,
 };
