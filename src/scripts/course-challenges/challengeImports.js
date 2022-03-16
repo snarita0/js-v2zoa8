@@ -12,6 +12,9 @@ import { set2_challenge4 } from './js-fundamentals-part2/set2_challenge4.js';
 // Developer Skills and Editor Setup (Set 3)
 import { set3_challenge1 } from './developer-skills-editor-setup/set3_challenge1.js';
 
+// JavaScript in the browser: DOM and Events (Set 4)
+import { set4_challenge1 } from './dom-and-events/set4_challenge1.js';
+
 export {
   set1_challenge1_2,
   set1_challenge3,
@@ -21,4 +24,5 @@ export {
   set2_challenge3,
   set2_challenge4,
   set3_challenge1,
+  set4_challenge1,
 };
