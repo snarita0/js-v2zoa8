@@ -1,9 +1,10 @@
 // Write all logic in file and return it in view
-import 'styles.css'
+import './script'
+import './style.css'
 
 export const set4_challenge1 = () => {
   const template = `<header>
-       <h1>Guess My Number!</h1>
+       <h1 id="test">Guess My Number!</h1>
        <p class="between">(Between 1 and 20)</p>  
        <button class="btn again">Again!</button>
        <div class="number">?</div>
