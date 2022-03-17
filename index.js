@@ -1,16 +1,14 @@
-import * as challenges from './src/scripts/course-challenges/challengeImports.js';
+import * as challenges from './src/pages/course-challenges/challengeImports.js';
 
 // Pages
-import { Home } from './src/scripts/Home';
-import { DOMAndEvents } from './src/scripts/course-challenges/dom-and-events/Page';
+import { Home } from './src/pages/Home';
 
-import './src/styles/app.css';
+import './src/pages/global.css';
 
 const app = async () => {
   // Display Page
   const pageContent = document.getElementById('root');
-  pageContent.innerHTML = DOMAndEvents();
-
+  
   // JS Fundamentals Part 1 (Set 1):
   // challenges.set1_challenge1_2();
   // challenges.set1_challenge3();
@@ -20,7 +18,8 @@ const app = async () => {
   // challenges.set2_challenge3();
   // challenges.set2_challenge4();
   // challenges.set3_challenge1();
-  challenges.set4_challenge1();
+  // challenges.set4_challenge1();
+  pageContent.innerHTML = challenges.set4_challenge1();
 };
 
 app();
