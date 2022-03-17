@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
 
+:root {
+  --document-downscale: 1.5; /* Original Scale / --document-downscale */
+  --outline: 1px solid yellow;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -22,7 +27,7 @@ body {
 header {
   position: relative;
   height: 35vh;
-  border-bottom: 7px solid #eee;
+  border-bottom: calc(7px / var(--document-downscale)) solid #eee;
 }
 
 main {
@@ -34,20 +39,20 @@ main {
 }
 
 .left {
-  width: 48rem;
+  width: calc(48rem / var(--document-downscale));
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .right {
-  width: 48rem;
-  font-size: 1.5rem;
+  width: calc(48rem / var(--document-downscale));
+  font-size: calc(1.5rem / var(--document-downscale));
 }
 
 /* ELEMENTS STYLE */
 h1 {
-  font-size: 3.5rem;
+  font-size: calc(3.5rem / var(--document-downscale));
   text-align: center;
   position: absolute;
   width: 100%;
@@ -59,9 +64,10 @@ h1 {
 .number {
   background: #eee;
   color: #333;
-  font-size: 6rem;
-  width: 15rem;
-  padding: 2rem 0rem;
+  font-size: calc(6rem / var(--document-downscale));
+  width: calc(15rem / var(--document-downscale));
+  padding: calc(2rem / var(--document-downscale))
+    calc(0rem / var(--document-downscale));
   text-align: center;
   position: absolute;
   bottom: 0;
@@ -70,38 +76,39 @@ h1 {
 }
 
 .between {
-  font-size: 1.4rem;
+  font-size: calc(1.4rem / var(--document-downscale));
   position: absolute;
-  top: 2rem;
-  right: 2rem;
+  top: calc(2rem / var(--document-downscale));
+  right: calc(2rem / var(--document-downscale));
 }
 
 .again {
   position: absolute;
-  top: 2rem;
-  left: 2rem;
+  top: calc(2rem / var(--document-downscale));
+  left: calc(2rem / var(--document-downscale));
 }
 
 .guess {
   background: none;
-  border: 4px solid #eee;
+  border: calc(4px / var(--document-downscale)) solid #eee;
   font-family: inherit;
   color: inherit;
-  font-size: 5rem;
-  padding: 2.5rem;
-  width: 25rem;
+  font-size: calc(5rem / var(--document-downscale));
+  padding: calc(2.5rem / var(--document-downscale));
+  width: calc(25rem / var(--document-downscale));
   text-align: center;
   display: block;
-  margin-bottom: 3rem;
+  margin-bottom: calc(3rem / var(--document-downscale));
 }
 
 .btn {
   border: none;
   background-color: #eee;
   color: #222;
-  font-size: 2rem;
+  font-size: calc(2rem / var(--document-downscale));
   font-family: inherit;
-  padding: 2rem 3rem;
+  padding: calc(2rem / var(--document-downscale))
+    calc(3rem / var(--document-downscale));
   cursor: pointer;
 }
 
@@ -110,10 +117,10 @@ h1 {
 }
 
 .message {
-  margin-bottom: 8rem;
-  height: 3rem;
+  margin-bottom: calc(8rem / var(--document-downscale));
+  height: calc(3rem / var(--document-downscale));
 }
 
 .label-score {
-  margin-bottom: 2rem;
+  margin-bottom: calc(2rem / var(--document-downscale));
 }
