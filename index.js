@@ -1,11 +1,14 @@
 import * as challenges from './src/scripts/course-challenges/challengeImports.js';
-import { Test } from './src/scripts/Test';
+
+// Pages
+import { Home } from './src/scripts/Home';
 
 import './src/styles/app.css';
 
 const app = async () => {
+  // Display Page
   const root = document.getElementById('root');
-  root.innerHTML += Test();
+  root.innerHTML += Home();
 
   // JS Fundamentals Part 1 (Set 1):
   // challenges.set1_challenge1_2();
