@@ -12,9 +12,15 @@ Your tasks:
 // Grab number input
 // Test if match
 
+// #60b347
 
+const generateRandomInt = (min = 1, max = 20) => {
+  // Includes min and max
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+};
 
 let timeToLoadContent = 1000;
+let hiddenNumber = generateRandomInt();
 
 // Give DOM enough time to load, to access it.
 setTimeout(() => {
@@ -23,9 +29,22 @@ setTimeout(() => {
   const score = document.querySelector('.score');
   const secretNumber = document.querySelector('.number');
 
+  const userGuess = document.querySelector('.guess');
+  const checkButton = document.querySelector('.check');
+
+  const documentBody = document.getElementsByTagName('body')[0];
+
+  checkButton.addEventListener('click', () => {
+    if (userGuess.value === hiddenNumber) {
+      // change background color
+      // reeval secretNumber with the hidden number.
+    }
+  });
+
   againButton.addEventListener('click', () => {
     score.innerText = 0;
     secretNumber.innerText = '?';
     message.innerText = 'Start guessing...';
+    userGuess.value = null;
   });
 }, timeToLoadContent);
