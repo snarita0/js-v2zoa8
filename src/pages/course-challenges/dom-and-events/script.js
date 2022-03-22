@@ -17,12 +17,13 @@ const generateRandomInt = (min = 1, max = 20) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
-let timeToLoadContent = 500;
+// let timeToLoadContent = 500;
 
 // Give DOM enough time to load, to access it.
 // setTimeout(() => {}, timeToLoadContent);
+console.log(document.readyState);
 
-document.addEventListener('DOMContentLoaded', () => {
+if (document.readyState === 'complete') {
   const againButton = document.querySelector('.again');
   const message = document.querySelector('.message');
   const userGuess = document.querySelector('.guess');
@@ -32,8 +33,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const checkButton = document.querySelector('.check');
   const documentBody = document.getElementsByTagName('body')[0];
 
-  let hiddenNumber = generateRandomInt();
-  const newGame = () => {
+  let hiddenNumber = 1;
+  // let hiddenNumber = generateRandomInt();
+  function newGame() {
     documentBody.style.backgroundColor = '#222';
     score.innerText = '20';
     secretNumber.innerText = '?';
@@ -43,9 +45,9 @@ document.addEventListener('DOMContentLoaded', () => {
     checkButton.disabled = false;
     hiddenNumber = 1;
     // hiddenNumber = generateRandomInt();
-  };
+  }
 
-  const gameWonCheck = () => {
+  function gameWonCheck() {
     let gameWon = parseInt(userGuess.value) === hiddenNumber;
     let newHighscore =
       parseInt(score.innerText) > parseInt(highscore.innerText);
@@ -61,26 +63,27 @@ document.addEventListener('DOMContentLoaded', () => {
         highscore.innerText = score.innerText;
       }
     } else {
+      // Lose a point
       score.innerText = parseInt(score.innerText) - 1;
     }
-  };
+  }
 
-  document.addEventListener('keydown', (event) => {
-    const ENTER_KEY = 'Enter';
-    const QUOTE_KEY = 'Quote';
+  // document.addEventListener('keydown', (event) => {
+  //   const ENTER_KEY = 'Enter';
+  //   const QUOTE_KEY = 'Quote';
 
-    if (event.code === ENTER_KEY) {
-      // gameWonCheck();
-      console.log('Enter pressed');
-    }
-    if (event.code === QUOTE_KEY) {
-      // newGame();
-      console.log('Apostraphe pressed');
-    }
+  //   if (event.code === ENTER_KEY) {
+  //     // gameWonCheck();
+  //     console.log('Enter pressed');
+  //   }
+  //   if (event.code === QUOTE_KEY) {
+  //     // newGame();
+  //     console.log('Apostraphe pressed');
+  //   }
 
-    // event.preventDefault();
-  });
+  //   // event.preventDefault();
+  // });
 
-  checkButton.addEventListener('click', gameWonCheck());
-  againButton.addEventListener('click', newGame());
-});
+  // checkButton.addEventListener('click', gameWonCheck());
+  // againButton.addEventListener('click', newGame());
+}
