@@ -21,6 +21,7 @@ const generateRandomInt = (min = 1, max = 20) => {
 // Give DOM enough time to load, to access it.
 // setTimeout(() => {}, timeToLoadContent);
 
+
 let timeToLoadContent = 50;
 setTimeout(() => {
   const againButton = document.querySelector('.again');
@@ -31,7 +32,9 @@ setTimeout(() => {
   const secretNumber = document.querySelector('.number');
   const checkButton = document.querySelector('.check');
   const documentBody = document.getElementsByTagName('body')[0];
-
+  
+  // userGuess.focus();
+  
   let hiddenNumber = 1;
   // let hiddenNumber = generateRandomInt();
   function newGame() {
@@ -48,10 +51,12 @@ setTimeout(() => {
 
   function gameWonCheck() {
     let gameWon = parseInt(userGuess.value) === hiddenNumber;
+    let gameFinished = false;
     let newHighscore =
       parseInt(score.innerText) > parseInt(highscore.innerText);
 
     if (gameWon) {
+      gameFinished = true;
       documentBody.style.backgroundColor = '#60b347';
       secretNumber.innerText = hiddenNumber;
       secretNumber.style.width = '17.5rem';
@@ -60,8 +65,9 @@ setTimeout(() => {
 
       if (newHighscore) {
         highscore.innerText = score.innerText;
-      }
-    } else {
+      }      
+    }
+    if (!gameFinished) {
       // Lose a point
       score.innerText = parseInt(score.innerText) - 1;
     }
@@ -72,6 +78,7 @@ setTimeout(() => {
     const QUOTE_KEY = 'Quote';
 
     if (event.code === ENTER_KEY) {
+      // userGuess.blur()
       gameWonCheck();
       // console.log('Enter pressed');
     }
