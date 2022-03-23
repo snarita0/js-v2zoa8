@@ -21,10 +21,10 @@ const generateRandomInt = (min = 1, max = 20) => {
 
 // Give DOM enough time to load, to access it.
 // setTimeout(() => {}, timeToLoadContent);
-console.log(document.readyState);
 
 if (document.readyState === 'complete') {
   const againButton = document.querySelector('.again');
+  console.log(againButton);
   const message = document.querySelector('.message');
   const userGuess = document.querySelector('.guess');
   const score = document.querySelector('.score');
