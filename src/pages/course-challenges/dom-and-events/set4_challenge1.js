@@ -21,8 +21,7 @@ export const set4_challenge1 = () => {
            🥇 Highscore: <span class="highscore">0</span>
          </p>
        </section>
-     </main>
-     <script id="script" src="./src/pages/course-challenges/dom-and-events/script.js"></script>`;
+     </main>`;
 
   return template;
 };

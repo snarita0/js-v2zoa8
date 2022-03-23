@@ -17,14 +17,13 @@ const generateRandomInt = (min = 1, max = 20) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
-// let timeToLoadContent = 500;
 
 // Give DOM enough time to load, to access it.
 // setTimeout(() => {}, timeToLoadContent);
 
-if (document.readyState === 'complete') {
+let timeToLoadContent = 50;
+setTimeout(() => {
   const againButton = document.querySelector('.again');
-  console.log(againButton);
   const message = document.querySelector('.message');
   const userGuess = document.querySelector('.guess');
   const score = document.querySelector('.score');
@@ -68,22 +67,26 @@ if (document.readyState === 'complete') {
     }
   }
 
-  // document.addEventListener('keydown', (event) => {
-  //   const ENTER_KEY = 'Enter';
-  //   const QUOTE_KEY = 'Quote';
+  document.addEventListener('keydown', (event) => {
+    const ENTER_KEY = 'Enter';
+    const QUOTE_KEY = 'Quote';
 
-  //   if (event.code === ENTER_KEY) {
-  //     // gameWonCheck();
-  //     console.log('Enter pressed');
-  //   }
-  //   if (event.code === QUOTE_KEY) {
-  //     // newGame();
-  //     console.log('Apostraphe pressed');
-  //   }
+    if (event.code === ENTER_KEY) {
+      gameWonCheck();
+      // console.log('Enter pressed');
+    }
+    if (event.code === QUOTE_KEY) {
+      newGame();
+      // console.log('Apostraphe pressed');
+    }
 
-  //   // event.preventDefault();
-  // });
-
-  // checkButton.addEventListener('click', gameWonCheck());
-  // againButton.addEventListener('click', newGame());
-}
+    // event.preventDefault();
+  });
+// 
+  checkButton.addEventListener('click', () => {
+    gameWonCheck()
+  });
+  againButton.addEventListener('click', () => {
+    newGame()
+  });
+}, timeToLoadContent);
