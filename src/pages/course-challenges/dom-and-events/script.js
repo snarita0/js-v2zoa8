@@ -6,10 +6,6 @@ Your tasks:
   2. In the handler function, restore initial values of the 'score' and 'secretNumber' variables
   3. Restore the initial conditions of the message, number, score and guess input fields
   4. Also restore the original background color (#222) and number width (15rem)
-
-  When listening for "keydown" event, the keys  being listened to get spammed multiple times. The number of times spammed grows overtime while playing the game. If played long enough, pressing those keys will cause a seizure.
-
-
 */
 
 const generateRandomInt = (min = 1, max = 20) => {
@@ -17,24 +13,20 @@ const generateRandomInt = (min = 1, max = 20) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
-
-// Give DOM enough time to load, to access it.
-// setTimeout(() => {}, timeToLoadContent);
-
-
 let timeToLoadContent = 50;
 setTimeout(() => {
   const againButton = document.querySelector('.again');
   const message = document.querySelector('.message');
+  let defaultMessage = "Start guessing...";
   const userGuess = document.querySelector('.guess');
   const score = document.querySelector('.score');
   const highscore = document.querySelector('.highscore');
   const secretNumber = document.querySelector('.number');
   const checkButton = document.querySelector('.check');
   const documentBody = document.getElementsByTagName('body')[0];
-  
+
   // userGuess.focus();
-  
+
   let hiddenNumber = 1;
   // let hiddenNumber = generateRandomInt();
   function newGame() {
@@ -42,7 +34,7 @@ setTimeout(() => {
     score.innerText = '20';
     secretNumber.innerText = '?';
     secretNumber.style.width = 'calc(15rem / var(--document-downscale))';
-    message.innerText = 'Start guessing...';
+    message.innerText = defaultMessage;
     userGuess.value = null;
     checkButton.disabled = false;
     hiddenNumber = 1;
@@ -50,10 +42,19 @@ setTimeout(() => {
   }
 
   function gameWonCheck() {
+    let guessNotInRange = userGuess.value < 1 || userGuess.value > 20;
     let gameWon = parseInt(userGuess.value) === hiddenNumber;
     let gameFinished = false;
     let newHighscore =
       parseInt(score.innerText) > parseInt(highscore.innerText);
+
+    if (guessNotInRange) {
+      message.classList.add('.message-error');
+      message.innerText = 'Guess a number from 1 to 20.';
+    } else {
+      message.classList.remove('.message-error');
+      message.innerText = defaultMessage;
+    }
 
     if (gameWon) {
       gameFinished = true;
@@ -65,35 +66,30 @@ setTimeout(() => {
 
       if (newHighscore) {
         highscore.innerText = score.innerText;
-      }      
+      }
     }
-    if (!gameFinished) {
+    if (!gameFinished && !guessNotInRange) {
       // Lose a point
       score.innerText = parseInt(score.innerText) - 1;
     }
   }
 
   document.addEventListener('keydown', (event) => {
-    const ENTER_KEY = 'Enter';
+    const SEMICOLON_KEY = 'Semicolon';
     const QUOTE_KEY = 'Quote';
 
-    if (event.code === ENTER_KEY) {
-      // userGuess.blur()
+    if (event.code === SEMICOLON_KEY) {
       gameWonCheck();
-      // console.log('Enter pressed');
     }
     if (event.code === QUOTE_KEY) {
       newGame();
-      // console.log('Apostraphe pressed');
     }
-
-    // event.preventDefault();
   });
-// 
+
   checkButton.addEventListener('click', () => {
-    gameWonCheck()
+    gameWonCheck();
   });
   againButton.addEventListener('click', () => {
-    newGame()
+    newGame();
   });
 }, timeToLoadContent);

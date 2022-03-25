@@ -20,6 +20,12 @@ export const set4_challenge1 = () => {
          <p class="label-highscore">
            🥇 Highscore: <span class="highscore">0</span>
          </p>
+        <section class="key-bindings">
+        <p>Key Bindings:</p>
+        <p>[ - Guess Number</p>
+        <p>] - New Game</p>
+
+        </section>
        </section>
      </main>`;
 

@@ -45,6 +45,10 @@ main {
   align-items: center;
 }
 
+.right p {
+  margin: 0;
+}
+
 .right {
   width: calc(48rem / var(--document-downscale));
   font-size: calc(1.5rem / var(--document-downscale));
@@ -121,6 +125,15 @@ h1 {
   height: calc(3rem / var(--document-downscale));
 }
 
+.message-error {
+  color: red;
+}
+
 .label-score {
   margin-bottom: calc(2rem / var(--document-downscale));
+}
+
+.key-bindings {
+  /* display: flex; */
+  /* flex-direction: column; */
 }
