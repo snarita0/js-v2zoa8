@@ -17,18 +17,15 @@ let timeToLoadContent = 50;
 setTimeout(() => {
   const againButton = document.querySelector('.again');
   const message = document.querySelector('.message');
-  let defaultMessage = "Start guessing...";
   const userGuess = document.querySelector('.guess');
   const score = document.querySelector('.score');
   const highscore = document.querySelector('.highscore');
   const secretNumber = document.querySelector('.number');
   const checkButton = document.querySelector('.check');
   const documentBody = document.getElementsByTagName('body')[0];
+  let defaultMessage = 'Start guessing...';
+  let hiddenNumber = generateRandomInt();
 
-  // userGuess.focus();
-
-  let hiddenNumber = 1;
-  // let hiddenNumber = generateRandomInt();
   function newGame() {
     documentBody.style.backgroundColor = '#222';
     score.innerText = '20';
@@ -37,41 +34,45 @@ setTimeout(() => {
     message.innerText = defaultMessage;
     userGuess.value = null;
     checkButton.disabled = false;
-    hiddenNumber = 1;
-    // hiddenNumber = generateRandomInt();
+    hiddenNumber = generateRandomInt();
+    message.classList.remove('message-error');
   }
 
   function gameWonCheck() {
     let guessNotInRange = userGuess.value < 1 || userGuess.value > 20;
+    let guessTooHigh = userGuess.value > hiddenNumber;
     let gameWon = parseInt(userGuess.value) === hiddenNumber;
-    let gameFinished = false;
     let newHighscore =
       parseInt(score.innerText) > parseInt(highscore.innerText);
 
     if (guessNotInRange) {
-      message.classList.add('.message-error');
+      message.classList.add('message-error');
       message.innerText = 'Guess a number from 1 to 20.';
+      return;
     } else {
-      message.classList.remove('.message-error');
+      message.classList.remove('message-error');
       message.innerText = defaultMessage;
     }
 
     if (gameWon) {
-      gameFinished = true;
       documentBody.style.backgroundColor = '#60b347';
       secretNumber.innerText = hiddenNumber;
       secretNumber.style.width = '17.5rem';
       message.innerText = 'You Win!';
       checkButton.disabled = true;
 
-      if (newHighscore) {
-        highscore.innerText = score.innerText;
-      }
+      // prettier-ignore
+      if (newHighscore) { highscore.innerText = score.innerText }
+      return;
     }
-    if (!gameFinished && !guessNotInRange) {
-      // Lose a point
-      score.innerText = parseInt(score.innerText) - 1;
-    }
+
+    // prettier-ignore
+    if (guessTooHigh) { message.innerText = 'Too High' }
+    // prettier-ignore
+    if (!guessTooHigh) { message.innerText = 'Too Low' }
+
+    // Lose a point
+    score.innerText = parseInt(score.innerText) - 1;
   }
 
   document.addEventListener('keydown', (event) => {

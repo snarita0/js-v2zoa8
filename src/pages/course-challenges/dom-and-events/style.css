@@ -26,7 +26,7 @@ body {
 /* LAYOUT */
 header {
   position: relative;
-  height: 35vh;
+  height: 45vh;
   border-bottom: calc(7px / var(--document-downscale)) solid #eee;
 }
 
@@ -52,6 +52,14 @@ main {
 .right {
   width: calc(48rem / var(--document-downscale));
   font-size: calc(1.5rem / var(--document-downscale));
+  margin-left: 10rem;
+}
+
+.key-bindings {
+  margin-top: 1rem;
+}
+.key-bindings p {
+  margin-top: 0.5rem;
 }
 
 /* ELEMENTS STYLE */
@@ -131,9 +139,4 @@ h1 {
 
 .label-score {
   margin-bottom: calc(2rem / var(--document-downscale));
-}
-
-.key-bindings {
-  /* display: flex; */
-  /* flex-direction: column; */
 }

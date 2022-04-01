@@ -17,8 +17,7 @@ export const set4_challenge1 = () => {
        <section class="right">
          <p class="message">Start guessing...</p>
          <p class="label-score">💯 Score: <span class="score">20</span></p>
-         <p class="label-highscore">
-           🥇 Highscore: <span class="highscore">0</span>
+         <p class="label-highscore">🥇 Highscore: <span class="highscore">0</span>
          </p>
         <section class="key-bindings">
         <p>Key Bindings:</p>
