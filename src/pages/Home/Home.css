@@ -8,6 +8,9 @@ body {
   justify-content: center;
   align-items: center;
   overflow-x: hidden;
+  color: var(--foreground);
+  line-height: 1.6;
+
   /* prettier-ignore */
   background-image: 
 		radial-gradient( circle at 29% 55%, hsla(329, 0%, 99%, 0.05) 0%, hsla(329, 0%, 99%, 0.05) 4%, transparent 4%, transparent 44%, transparent 44%, transparent 100%),
@@ -20,8 +23,6 @@ body {
     radial-gradient( circle at 77% 21%, hsla(329, 0%, 99%, 0.05) 0%, hsla(329, 0%, 99%, 0.05) 35%, transparent 35%, transparent 55%, transparent 55%, transparent 100%),
     radial-gradient( circle at 65% 91%, hsla(329, 0%, 99%, 0.05) 0%, hsla(329, 0%, 99%, 0.05) 46%, transparent 46%, transparent 76%, transparent 76%, transparent 100%),
     linear-gradient(45deg, rgb(83, 91, 235), rgb(76, 11, 174));
-  color: var(--foreground);
-  line-height: 1.6;
 }
 
 header {
@@ -30,7 +31,6 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  outline: 1px solid yellow;
 }
 
 header hr {

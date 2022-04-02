@@ -1,7 +1,7 @@
 import * as challenges from './src/pages/course-challenges/challengeImports.js';
 
 // Pages
-import { Home } from './src/pages/Home';
+import { Home } from './src/pages/Home/Home';
 
 import './src/pages/global.css';
 
@@ -9,7 +9,7 @@ const app = async () => {
   // Display Page
   const view = (view) => {
     const pageContent = document.getElementById('root');
-    pageContent.innerHTML = view;
+    pageContent.innerHTML = view || Home();
   };  
 
   // view(challenges.set1_challenge1_2());
@@ -21,7 +21,8 @@ const app = async () => {
   // view(challenges.set2_challenge4());
   // view(challenges.set3_challenge1());
   // view(challenges.set4_challenge1());
-  view(challenges.set4_challenge1());
+  // view(challenges.set4_challenge1());
+  view(challenges.set5_challenge1());
 };
 
 app();

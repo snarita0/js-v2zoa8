@@ -15,6 +15,9 @@ import { set3_challenge1 } from './developer-skills-editor-setup/set3_challenge1
 // JavaScript in the browser: DOM and Events (Set 4)
 import { set4_challenge1 } from './dom-and-events/set4_challenge1.js';
 
+// Data Structures, Modern Operators, and Strings (Set 5)
+import { set5_challenge1 } from './data-structures-modern-operators-and-strings/set5_challenge1.js';
+
 export {
   set1_challenge1_2,
   set1_challenge3,
@@ -24,5 +27,6 @@ export {
   set2_challenge3,
   set2_challenge4,
   set3_challenge1,
-  set4_challenge1,
+  // set4_challenge1,
+  set5_challenge1,
 };
