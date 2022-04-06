@@ -87,10 +87,6 @@ setTimeout(() => {
     }
   });
 
-  checkButton.addEventListener('click', () => {
-    gameWonCheck();
-  });
-  againButton.addEventListener('click', () => {
-    newGame();
-  });
+  checkButton.addEventListener('click', gameWonCheck);
+  againButton.addEventListener('click', newGame);
 }, timeToLoadContent);

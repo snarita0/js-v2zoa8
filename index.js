@@ -9,8 +9,8 @@ const app = async () => {
   // Display Page
   const view = (view) => {
     const pageContent = document.getElementById('root');
-    pageContent.innerHTML = view || Home();
-  };  
+    pageContent.innerHTML = view;
+  };
 
   // view(challenges.set1_challenge1_2());
   // view(challenges.set1_challenge3());
@@ -20,9 +20,8 @@ const app = async () => {
   // view(challenges.set2_challenge3());
   // view(challenges.set2_challenge4());
   // view(challenges.set3_challenge1());
-  // view(challenges.set4_challenge1());
-  // view(challenges.set4_challenge1());
-  view(challenges.set5_challenge1());
+  view(challenges.set4_challenge1()); // Enable (export) in challengeImports.js
+  // view(challenges.set5_challenge1());
 };
 
 app();

@@ -27,6 +27,6 @@ export {
   set2_challenge3,
   set2_challenge4,
   set3_challenge1,
-  // set4_challenge1,
+  set4_challenge1,
   set5_challenge1,
 };
